@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>escuela</title>
+    <title>products</title>
 </head>
 <body>
     
@@ -18,6 +18,10 @@
 
     <h3>
     <a href="../products/stores/indexa.php">ANTWONESTORE</a>
+    </h3>
+
+    <h3>
+    <a href="../products/stores/indexj.php">JUANSTORE</a>
     </h3>
 
     <h3>

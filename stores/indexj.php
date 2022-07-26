@@ -1,19 +1,21 @@
 <?php
 
 require_once ("../lib/functions.php");
-$products = get_all_products($connect);
+$products = get_juan_products($connect);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALL PRODUCTS </title>
+    <title>PRODUCTS JUANSTORE</title>
 </head>
 <body>
 
-<h1>ALL PRODUCTS <small><a href="../">Regresar</a></small></h1>
+<h1>PRODUCTS JUANESTORE <small><a href="../">Regresar</a></small></h1>
 
 <table>
         <thead>
