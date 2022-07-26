@@ -32,24 +32,28 @@ $products = get_antwone_products($connect);
         </thead>
     <tbody>
     <?php
-        while ($fila = mysqli_fetch_array($products))
-        {
-        ?>
+
+$query = "SELECT * FROM products ";
+$resultado=$connect->query($query);
+while ($fila = mysqli_fetch_array($products))
+{
+
+?>
+
         <tr>
             <td><?php echo $fila["id"]?></td>
             <td><?php echo $fila["name"]?></td>
             <td><?php echo $fila["description"]?></td>
-            <td><?php echo $fila["image"]?></td>
-            <td><?php echo $fila["price"]?></td>
+<td><img height= "200px"src="data:image/jpeg ;base64,<?php echo base64_encode($fila['image']);?>"/></td>
+<td><?php echo $fila["price"]?></td>
             <td><?php echo $fila["quantity"]?></td>
             <td><?php echo $fila["status"]?> </td>
             <td><?php echo $fila["user_id"]?></td>
             <td><?php echo $fila["category_id"]?></td>
-            
-        </tr>
-        <?php    
-        }
-        ?>
+            </tr>
+            <?php
+            }
+?>
     </tbody>
     </table>
 
