@@ -8,7 +8,7 @@ $connect = mysqli_connect($host, $user, $password, $db);
 
 if($connect)
     {
-    echo "tas online";
+    echo "online";
     }
     else
     {
