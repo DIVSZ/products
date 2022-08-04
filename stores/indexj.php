@@ -64,8 +64,8 @@ while ($fila = mysqli_fetch_array($products))
             <td><?php echo $fila["description"]?></td>
             <td><?php echo $fila["price"]?></td>
             <td><?php echo $fila["quantity"]?></td>
-            <td><img height= "200px"src="data:image/jpeg ;base64,<?php echo base64_encode($fila['image']);?>"/></td>
-        </tr>
+            <td><img height= "200px" src='../products/image/<?php echo $fila["image"]?>'></td>
+            </tr>
             <?php
             }
 ?>

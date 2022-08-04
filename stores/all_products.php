@@ -1,7 +1,10 @@
 <?php
 
 require_once ("../lib/functions.php");
+
 $products = get_all_products($connect);
+$users= get_all_productsin($connect);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,20 +16,25 @@ $products = get_all_products($connect);
 </head>
 <body>
 
-<h1 align="center"> ALL PRODUCTS <small><a href="../">Regresar</a></small></h1>
+<h1 align="center"> ALL PRODUCTS <small><a href="../">Regresar</a></small></small><br> <a href = "/products/stores/formulario_insert.php">insertar productos </a></small></h1>
 <table align="center">
         <thead>
+
+            
+    
             <tr>
                 <th>ID</th>
                 <th>name</th>
                 <th>Category 
                     <small>
+                    <form method="post">
                         <select name="select">
                             <option selected ></option>
                             <option value1="enlatados">enlatados</option>
                             <option value2="bebibles">bebibles</option>
                             <option value3="limpieza">limpieza</option>
                         </select>
+                        </form>
                     </small>
                 </th>
                 <th>Description</th>
@@ -34,8 +42,8 @@ $products = get_all_products($connect);
                     <small>
                         <select name="select">
                            <option selected ></option>
-                           <option value1="mayor">Mayor</option>
-                           <option value2="menor">Menor</option>
+                           <option value1="mayor">Mayor a menor </option>
+                           <option value2="menor">Menor a mayor</option>
                         </select>
                     </small>
                 </th>
@@ -45,10 +53,8 @@ $products = get_all_products($connect);
         </thead>
     <tbody>
     <?php
-
-$query = "SELECT * FROM products ";
-$resultado=$connect->query($query);
-while ($fila = mysqli_fetch_array($products))
+   
+    while ($fila = mysqli_fetch_array($users))
 {
 
 ?>
@@ -61,7 +67,11 @@ while ($fila = mysqli_fetch_array($products))
             <td><?php echo $fila["description"]?></td>
             <td><?php echo $fila["price"]?></td>
             <td><?php echo $fila["quantity"]?></td>
-            <td><img height= "200px"src="data:image/jpeg ;base64,<?php echo base64_encode($fila['image']);?>"/></td>
+            <td><img height= "200px" src='../products/image/<?php echo $fila["image"]?>'></td>
+            </small>
+            <td>  
+            <small><td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">actualizar producto</a></td></small> 
+            <small><td><a href="delete_query.php?id=<?php echo $fila['id']; ?>">eliminar producto</a></td></small> 
         </tr>
             <?php
             }

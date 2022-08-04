@@ -2,6 +2,7 @@
 
 require_once ("../lib/functions.php");
 $products = get_antwone_products($connect);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +63,7 @@ while ($fila = mysqli_fetch_array($products))
             <td><?php echo $fila["description"]?></td>
             <td><?php echo $fila["price"]?></td>
             <td><?php echo $fila["quantity"]?></td>
-            <td><img height= "200px"src="data:image/jpeg ;base64,<?php echo base64_encode($fila['image']);?>"/></td>
+            <td><img height= "200px" src='../products/image/<?php echo $fila["image"]?>'></td>
         </tr>
             <?php
             }
