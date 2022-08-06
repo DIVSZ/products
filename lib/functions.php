@@ -7,6 +7,12 @@ $consulta = "SELECT * FROM products WHERE id = $id";
 $resultado = mysqli_query($connect, $consulta);
 return $resultado;
 }
+function get_productsv($connect,$id)
+{
+$consulta = "SELECT * FROM products WHERE id = 3";
+$resultado = mysqli_query($connect, $consulta);
+return $resultado;
+}
 
 function get_all_productsin($connect)
 {

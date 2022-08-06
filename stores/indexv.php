@@ -1,7 +1,6 @@
 <?php
 require_once ("../lib/functions.php");
 $products = get_villalobos_products($connect);
-$users= get_villalobos_products($connect);
 
 
 
@@ -18,7 +17,7 @@ $users= get_villalobos_products($connect);
 
 <body>
 
-<h1 align="center">PRODUCTS VILLALOBOSTORE <small><a href="../"> Regresar</a></h1><table><thead>
+<h1 align="center">PRODUCTS VILLALOBOSTORE <small><a href="../"> Regresar</a></small></small><br> <a href = "/products/stores/formulario_insertvillalobos.php">insertar productos </a></small></h1><table><thead>
     <br>     
     <small>
    
@@ -58,7 +57,7 @@ $users= get_villalobos_products($connect);
 
 $query = "SELECT * FROM products ";
 $resultado=$connect->query($query);
-while ($fila = mysqli_fetch_array($users))
+while ($fila = mysqli_fetch_array($products))
 {
 
 ?>
@@ -75,9 +74,10 @@ while ($fila = mysqli_fetch_array($users))
             </small>
             <br> <td>
             </small>
-            <br>   
-              <small><td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">actualizar producto</a></td></small> 
-              <small><td><a href="formulario_delete.php?id=<?php echo $fila['id']; ?>">eliminar producto</a></td></small> 
+            <br>
+              <small><td><a href="detailvillalobos.php?id=<?php echo $fila['id']; ?>">Detalles</a></td></small> 
+              <small><td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">Actualizar producto</a></td></small> 
+              <small><td><a href="delete_queryvillalobos.php?id=<?php echo $fila['id']; ?>">Eliminar producto</a></td></small> 
             </td>        
         <?php    
         }                

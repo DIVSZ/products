@@ -3,6 +3,7 @@
 require_once ("../lib/functions.php");
 $products = get_juan_products($connect);
 
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ $products = get_juan_products($connect);
 </head>
 <body>
 
-<h1 align="center">PRODUCTS JUANESTORE <small><a href="../">Back</a></small></h1>
+<h1 align="center">PRODUCTS JUANSTORE <small><a href="../">Regresar</a></small></small><br> <a href = "/products/stores/formulario_insertjuan.php">insertar productos </a></small></small></h1>
 
 <table align="center">
         <thead>
@@ -65,6 +66,13 @@ while ($fila = mysqli_fetch_array($products))
             <td><?php echo $fila["price"]?></td>
             <td><?php echo $fila["quantity"]?></td>
             <td><img height= "200px" src='../products/image/<?php echo $fila["image"]?>'></td>
+            </small>
+            <br> <td>
+            </small>
+            <br>
+            <small><td><a href="detailjuan.php?id=<?php echo $fila['id']; ?>">Detalles</a></td></small>
+              <small><td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">Actualizar producto</a></td></small> 
+              <small><td><a href="delete_queryjuan.php?id=<?php echo $fila['id']; ?>">Eliminar producto</a></td></small> 
             </tr>
             <?php
             }

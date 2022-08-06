@@ -1,7 +1,6 @@
 <?php
 
 require_once ("../lib/functions.php");
-
 $products = get_all_products($connect);
 $users= get_all_productsin($connect);
 
@@ -69,7 +68,8 @@ $users= get_all_productsin($connect);
             <td><?php echo $fila["quantity"]?></td>
             <td><img height= "200px" src='../products/image/<?php echo $fila["image"]?>'></td>
             </small>
-            <td>  
+            <td> 
+            <small><td><a href="detailallproducts.php?id=<?php echo $fila['id']; ?>">Detalles</a></td></small> 
             <small><td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">actualizar producto</a></td></small> 
             <small><td><a href="delete_query.php?id=<?php echo $fila['id']; ?>">eliminar producto</a></td></small> 
         </tr>
