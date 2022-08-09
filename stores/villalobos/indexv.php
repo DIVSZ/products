@@ -1,27 +1,31 @@
 <?php
+require_once ("../../lib/functions.php");
+$products = get_villalobos_products($connect);
 
-require_once ("../lib/functions.php");
-$products = get_juan_products($connect);
+
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRODUCTS JUANSTORE</title>
+    <title>PRODUCTS VILLALOBOS</title>
 </head>
+
 <body>
 
-<h1 align="center">PRODUCTS JUANSTORE <small><a href="../">Regresar</a></small></small><br> <a href = "/products/stores/formulario_insertjuan.php">insertar productos </a></small></small></h1>
+<h1 align="center">PRODUCTS VILLALOBOSTORE <small><a href="../../index.php"> Back</a><br> <a href = "formulario_insertvillalobos.php">Insert product </a></small></h1><table><thead>
+    <br>     
+    <small>
+   
 
 <table align="center">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>id</th>
                 <th>name</th>
                 <th>Category 
                     <small>
@@ -38,13 +42,14 @@ $products = get_juan_products($connect);
                     <small>
                         <select name="select">
                            <option selected ></option>
-                           <option value1="mayor">Mayor</option>
-                           <option value2="menor">Menor</option>
+                           <option value1="mayor">Mayor a menor</option>
+                           <option value2="menor">Menor a mayor</option>
                         </select>
                     </small>
                 </th>
                 <th>Quantity</th>
                 <th>Image</th>
+                
             </tr>
         </thead>
     <tbody>
@@ -57,25 +62,25 @@ while ($fila = mysqli_fetch_array($products))
 
 ?>
 
+
        <tr align="center">
-        
             <td><?php echo $fila["id"]?></td>
             <td><?php echo $fila["products"]?></td>
             <td><?php echo $fila["categories"]?></td>
             <td><?php echo $fila["description"]?></td>
             <td><?php echo $fila["price"]?></td>
             <td><?php echo $fila["quantity"]?></td>
-            <td><img height= "200px" src='../products/image/<?php echo $fila["image"]?>'></td>
+            <td><img height= "200px" src='../../products/image/<?php echo $fila["image"]?>'></td>
             </small>
             <br> <td>
             </small>
             <br>
-            <small><td><a href="detailjuan.php?id=<?php echo $fila['id']; ?>">Detalles</a></td></small>
-              <small><td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">Actualizar producto</a></td></small> 
-              <small><td><a href="delete_queryjuan.php?id=<?php echo $fila['id']; ?>">Eliminar producto</a></td></small> 
-            </tr>
-            <?php
-            }
+              <small><td><a href="detailvillalobos.php?id=<?php echo $fila['id']; ?>">Details</a></td></small> 
+              <small><td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">Update product</a></td></small> 
+              <small><td><a href="delete_queryvillalobos.php?id=<?php echo $fila['id']; ?>">Delete product</a></td></small> 
+            </td>        
+        <?php    
+        }                
 ?>
     </tbody>
     </table>

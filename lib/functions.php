@@ -1,18 +1,24 @@
 <?php
 require_once ("connect.php");
 //get producto ,,, where id   ,
+
 function get_products($connect,$id)
 {
-$consulta = "SELECT * FROM products WHERE id = $id";
-$resultado = mysqli_query($connect, $consulta);
-return $resultado;
+    $consulta = "SELECT * FROM products WHERE id = $id";
+    $resultado = mysqli_query($connect, $consulta);
+    return $resultado;
 }
+
+
+
 function get_productsv($connect,$id)
+
 {
-$consulta = "SELECT * FROM products WHERE id = 3";
-$resultado = mysqli_query($connect, $consulta);
-return $resultado;
+    $consulta = "SELECT * FROM products WHERE id = 3";
+    $resultado = mysqli_query($connect, $consulta);
+    return $resultado;
 }
+
 
 function get_all_productsin($connect)
 {
@@ -31,7 +37,10 @@ $resultado = mysqli_query($connect, $consulta);
 return $resultado;
 }
 
-function get_all_products($connect){
+
+
+function get_all_products($connect)
+{
     $consulta = "SELECT 
     c.name as 'categories',
     p.id as 'id',
@@ -47,7 +56,10 @@ function get_all_products($connect){
     return $resultado;
 }
 
-function get_juan_products($connect){
+
+
+function get_juan_products($connect)
+{
     $consulta = "SELECT 
     c.name as 'categories',
     p.id as 'id',
@@ -64,7 +76,8 @@ function get_juan_products($connect){
 }
 
 
-function get_villalobos_products($connect){
+function get_villalobos_products($connect)
+{
     $consulta = "SELECT 
     c.name as 'categories',
     p.id as 'id',
@@ -79,7 +92,10 @@ function get_villalobos_products($connect){
     $resultado = mysqli_query ($connect, $consulta);
     return $resultado;
 }
-function get_antwone_products($connect){
+
+
+function get_antwone_products($connect)
+{
     $consulta = "SELECT 
     c.name as 'categories',
     p.id as 'id',
@@ -116,6 +132,8 @@ function insert_products ($name,$description,$image,$price,$quantity,$status,$us
         
         $resultado = mysqli_query($connect, $consulta);
     }
+
+
 
 function delete_products($connect,$id)
 {

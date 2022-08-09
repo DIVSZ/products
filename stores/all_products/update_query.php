@@ -1,6 +1,6 @@
 <?php
 
-require_once ("../lib/functions.php");
+require_once ("../../lib/functions.php");
 
 $name= $_POST ['name'];
 
@@ -16,7 +16,7 @@ $status = $_POST ['status'];
 
 $user_id = $_POST ['user_id'];
 
-$categories = $_POST ['category_id'];
+$category_id = $_POST ['category_id'];
 
 $id = $_POST ['id'];
 

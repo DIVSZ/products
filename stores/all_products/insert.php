@@ -1,7 +1,6 @@
-
 <?php
 
-require_once ("../lib/functions.php");
+require_once ("../../lib/functions.php");
 
 $name= $_POST ["name"];
 
@@ -21,6 +20,6 @@ $category_id = $_POST ["category_id"];
 
 insert_products($name,$description,$image,$price,$quantity,$status,$user_id,$category_id);
 
-header("Location: indexv.php");
+header("Location: all_products.php");
 
 ?>

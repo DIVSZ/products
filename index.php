@@ -13,19 +13,19 @@
     </h1>
 
     <h3>
-    <a href="../products/stores/indexv.php">VILLALOBOSTORE</a>
+    <a href="../products/stores/villalobos/indexv.php">VILLALOBOSTORE</a>
     </h3>
 
     <h3>
-    <a href="../products/stores/indexa.php">ANTWONESTORE</a>
+    <a href="../products/stores/antwone/indexa.php">ANTWONESTORE</a>
     </h3>
 
     <h3>
-    <a href="../products/stores/indexj.php">JUANSTORE</a>
+    <a href="../products/stores/juan/indexj.php">JUANSTORE</a>
     </h3>
 
     <h3>
-    <a href="../products/stores/all_products.php">ALL PRODUCTS</a>
+    <a href="../products/stores/all_products/all_products.php">ALL PRODUCTS</a>
     </h3>
 
 </body>

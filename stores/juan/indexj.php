@@ -1,39 +1,37 @@
 <?php
 
-require_once ("../lib/functions.php");
-$products = get_all_products($connect);
-$users= get_all_productsin($connect);
+require_once ("../../lib/functions.php");
+$products = get_juan_products($connect);
+
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALL PRODUCTS</title>
+    <title>PRODUCTS JUANSTORE</title>
 </head>
 <body>
 
-<h1 align="center"> ALL PRODUCTS <small><a href="../">Regresar</a></small></small><br> <a href = "/products/stores/formulario_insert.php">insertar productos </a></small></h1>
+<h1 align="center">PRODUCTS JUANSTORE <small><a href="../../index.php">Back</a>
+<br> <a href = "/products/stores/juan/formulario_insertjuan.php">Insert Product </a></small></small></h1>
+
 <table align="center">
         <thead>
-
-            
-    
             <tr>
                 <th>ID</th>
                 <th>name</th>
                 <th>Category 
                     <small>
-                    <form method="post">
                         <select name="select">
                             <option selected ></option>
                             <option value1="enlatados">enlatados</option>
                             <option value2="bebibles">bebibles</option>
                             <option value3="limpieza">limpieza</option>
                         </select>
-                        </form>
                     </small>
                 </th>
                 <th>Description</th>
@@ -41,8 +39,8 @@ $users= get_all_productsin($connect);
                     <small>
                         <select name="select">
                            <option selected ></option>
-                           <option value1="mayor">Mayor a menor </option>
-                           <option value2="menor">Menor a mayor</option>
+                           <option value1="mayor">Mayor</option>
+                           <option value2="menor">Menor</option>
                         </select>
                     </small>
                 </th>
@@ -52,8 +50,10 @@ $users= get_all_productsin($connect);
         </thead>
     <tbody>
     <?php
-   
-    while ($fila = mysqli_fetch_array($users))
+
+$query = "SELECT * FROM products ";
+$resultado=$connect->query($query);
+while ($fila = mysqli_fetch_array($products))
 {
 
 ?>
@@ -66,13 +66,15 @@ $users= get_all_productsin($connect);
             <td><?php echo $fila["description"]?></td>
             <td><?php echo $fila["price"]?></td>
             <td><?php echo $fila["quantity"]?></td>
-            <td><img height= "200px" src='../products/image/<?php echo $fila["image"]?>'></td>
+            <td><img height= "200px" src='../../products/image/<?php echo $fila["image"]?>'></td>
             </small>
-            <td> 
-            <small><td><a href="detailallproducts.php?id=<?php echo $fila['id']; ?>">Detalles</a></td></small> 
-            <small><td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">actualizar producto</a></td></small> 
-            <small><td><a href="delete_query.php?id=<?php echo $fila['id']; ?>">eliminar producto</a></td></small> 
-        </tr>
+            <br> <td>
+            </small>
+            <br>
+            <small><td><a href="detailjuan.php?id=<?php echo $fila['id']; ?>">Details</a></td></small>
+              <small><td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">Update product</a></td></small> 
+              <small><td><a href="delete_queryjuan.php?id=<?php echo $fila['id']; ?>">Delete product</a></td></small> 
+            </tr>
             <?php
             }
 ?>

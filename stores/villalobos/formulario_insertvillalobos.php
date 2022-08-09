@@ -1,5 +1,5 @@
 <?php
-require_once("../lib/functions.php");
+require_once("../../lib/functions.php");
 ?>
 
 <!DOCTYPE html>
@@ -8,12 +8,12 @@ require_once("../lib/functions.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formulario insert</title>
+    <title>insertvillalobos</title>
 </head>
 
-<body>
+<body align="center">
 
-<h1>formulario insert productos</h1>
+<h1>Insert Product <small><a href="indexv.php">Back</a></small></h1>
 
 <form action= "insertvillalobos.php" method="post">
     
@@ -33,23 +33,23 @@ require_once("../lib/functions.php");
 <br><br><br>
 
 <label for="price">price</label> <br>
-<input type="text" id= "price" name= "price" placeholder = "introduzca su precio">
+<input type="number" id= "price" name= "price" placeholder = "introduzca su precio">
 <br><br><br>
 
 <label for="quantity">quantity</label> <br>
-<input type="text" id= "quantity" name= "quantity" placeholder = "introduzca su cantidad">
+<input type="number" id= "quantity" name= "quantity" placeholder = "introduzca su cantidad">
 <br><br><br>
 
 <label for="status">status</label> <br>
-<input type="text" id= "status" name= "status" placeholder = "introduzca su status">
+<input type="number" id= "status" name= "status" placeholder = "introduzca su status">
 <br><br><br>
 
 <label for="user_id">user_id "3"</label> <br>
-<input type="3" id= "user_id" name= "user_id" placeholder = "3" >
+<input type="number" id= "user_id" name= "user_id" placeholder = "3" >
 <br><br><br>
 
 <label for="category_id">category_id<br><br>enlatados"7"  limpieza "8"  bebibles "9"</label> <br>
-<input type="text" id= "category_id" name= "category_id" placeholder = "introduzca su category_id">
+<input type="number" id= "category_id" name= "category_id" placeholder = "introduzca su category_id">
 <br><br><br>
 
 
