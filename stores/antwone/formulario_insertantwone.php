@@ -48,7 +48,7 @@ require_once("../../lib/functions.php");
 <input type="text" id= "user_id" name= "user_id" placeholder = "2">
 <br><br><br>
 
-<label for="category_id">category_id<br><br>enlatados"4"  bebibles "5"  limpieza "6"</label> <br>
+<label for="category_id">category_id<br>enlatados"4"  bebibles "5"  limpieza "6"</label> <br>
 <input type="text" id= "category_id" name= "category_id" placeholder = "introduzca su category_id">
 <br><br><br>
 
