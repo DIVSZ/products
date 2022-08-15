@@ -33,25 +33,25 @@ require_once("../../lib/functions.php");
 <br><br><br>
 
 <label for="price">price</label> <br>
-<input type="number" id= "price" name= "price" placeholder = "introduzca su precio">
+<input type="text" id= "price" name= "price" placeholder = "introduzca su precio">
 <br><br><br>
 
 <label for="quantity">quantity</label> <br>
-<input type="number" id= "quantity" name= "quantity" placeholder = "introduzca su cantidad">
+<input type="text" id= "quantity" name= "quantity" placeholder = "introduzca su cantidad">
 <br><br><br>
 
 <label for="status">status</label> <br>
-<input type="number" id= "status" name= "status" placeholder = "introduzca su status">
+<input type="text" id= "status" name= "status" placeholder = "introduzca su status">
 <br><br><br>
 
 <label for="user_id">user_id<br> "1" juan "2" antwone "3"villalobos</label> <br>
-<input type="number" id= "user_id" name= "user_id" placeholder = "introduzca su user_id">
+<input type="text" id= "user_id" name= "user_id" placeholder = "introduzca su user_id">
 <br><br><br>
 
 <label for="category_id">category_id <br>juan: enlatados"1"  limpieza "2"  bebibles "3"
 <br>antwone: enlatados"4"  bebibles "5"  limpieza "6" <br>villalobos: enlatados"7"  limpieza "8"  bebibles "9"
 </label> <br>
-<input type="number" id= "category_id" name= "category_id" placeholder = "introduzca su category_id">
+<input type="text" id= "category_id" name= "category_id" placeholder = "introduzca su category_id">
 <br><br><br>
 
 
