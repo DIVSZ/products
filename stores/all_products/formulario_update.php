@@ -50,12 +50,13 @@ $users = mysqli_fetch_array($resultado);
 <input type="number" id= "status" name= "status"value ="<?php echo $users['status']; ?>">
 <br><br>
 
-<label for="user_id">user_id</label> <br>
+<label for="user_id">user_id<br> "1" juan "2" antwone "3"villalobos</label> <br>
 <input type="number" id= "user_id" name= "user_id"value ="<?php echo $users['user_id']; ?>">
 <br><br>
 
 
-<label for="category_id">category_id</label> <br>
+<label for="category_id">category_id<br>juan: enlatados"1"  limpieza "2"  bebibles "3"
+<br>antwone: enlatados"4"  bebibles "5"  limpieza "6" <br>villalobos: enlatados"7"  limpieza "8"  bebibles "9"</label> <br>
 <input type="number" id= "category_id" name= "category_id"value ="<?php echo $users['category_id']; ?>">
 <br><br>
 

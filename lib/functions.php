@@ -225,7 +225,7 @@ return $resultado;
 }
 
 
-///Antwone friltros name//--------------------------------------------------------------------------!
+///Antwone filtros name//--------------------------------------------------------------------------!
 
 function ant_az($connect)
 {
@@ -239,7 +239,7 @@ function ant_az($connect)
     p.name as 'products'
     FROM categories c
     JOIN products p
-    ON c.id = p.category_id  WHERE p.user_id = 2 ORDER BY p.name DESC";
+    ON c.id = p.category_id  WHERE p.user_id = 2 ORDER BY p.name ASC";
     $resultado = mysqli_query ($connect, $consulta);
     return $resultado;
 }
@@ -256,12 +256,12 @@ function ant_za($connect)
     p.name as 'products'
     FROM categories c
     JOIN products p
-    ON c.id = p.category_id WHERE p.user_id =2 ORDER BY p.name ASC";
+    ON c.id = p.category_id WHERE p.user_id =2 ORDER BY p.name DESC";
     $resultado = mysqli_query ($connect, $consulta);
     return $resultado;
 }
 
-///Antwone friltros price//-----------------------------------------------------------------------------!
+///Antwone filtros price//-----------------------------------------------------------------------------!
 
 function ant_price_asc($connect)
 {
@@ -299,7 +299,7 @@ function ant_price_desc($connect)
 }
 
 
-///Antwone friltros quantity//-------------------------------------------------------------------------------!
+///Antwone filtros quantity//-------------------------------------------------------------------------------!
 
 function ant_quantity_asc($connect)
 {
@@ -340,7 +340,7 @@ function ant_quantity_desc($connect)
 
 
 
-///Juan friltros name//-------------------------------------------------------------------------------------------------------!
+///Juan filtros name//-------------------------------------------------------------------------------------------------------!
 
 function juan_az($connect)
 {
@@ -354,7 +354,7 @@ function juan_az($connect)
     p.name as 'products'
     FROM categories c
     JOIN products p
-    ON c.id = p.category_id  WHERE p.user_id = 1 ORDER BY p.name DESC";
+    ON c.id = p.category_id  WHERE p.user_id = 1 ORDER BY p.name ASC";
     $resultado = mysqli_query ($connect, $consulta);
     return $resultado;
 }
@@ -371,14 +371,14 @@ function juan_za($connect)
     p.name as 'products'
     FROM categories c
     JOIN products p
-    ON c.id = p.category_id WHERE p.user_id =1 ORDER BY p.name ASC";
+    ON c.id = p.category_id WHERE p.user_id =1 ORDER BY p.name DESC";
     $resultado = mysqli_query ($connect, $consulta);
     return $resultado;
 }
 
 
 
-///Juan friltros price//--------------------------------------------------------!
+///Juan filtros price//--------------------------------------------------------!
 
 function juan_price_asc($connect)
 {
@@ -416,7 +416,7 @@ function juan_price_desc($connect)
 }
 
 
-///Juan friltros quantity//--------------------------------------------------------!
+///Juan filtros quantity//--------------------------------------------------------!
 
 function juan_quantity_asc($connect)
 {
@@ -453,7 +453,7 @@ function juan_quantity_desc($connect)
 
 
 
-///Villalobos friltros name//-------------------------------------------------------------------------------------------------------!
+///Villalobos filtros name//-------------------------------------------------------------------------------------------------------!
 
 function villa_az($connect)
 {
@@ -467,7 +467,7 @@ function villa_az($connect)
     p.name as 'products'
     FROM categories c
     JOIN products p
-    ON c.id = p.category_id  WHERE p.user_id = 3 ORDER BY p.name DESC";
+    ON c.id = p.category_id  WHERE p.user_id = 3 ORDER BY p.name ASC";
     $resultado = mysqli_query ($connect, $consulta);
     return $resultado;
 }
@@ -484,14 +484,14 @@ function villa_za($connect)
     p.name as 'products'
     FROM categories c
     JOIN products p
-    ON c.id = p.category_id WHERE p.user_id =3 ORDER BY p.name ASC";
+    ON c.id = p.category_id WHERE p.user_id =3 ORDER BY p.name DESC";
     $resultado = mysqli_query ($connect, $consulta);
     return $resultado;
 }
 
 
 
-///Villalobos friltros price//--------------------------------------------------------!
+///Villalobos filtros price//--------------------------------------------------------!
 
 function villa_price_asc($connect)
 {
@@ -529,7 +529,7 @@ function villa_price_desc($connect)
 }
 
 
-///Villalobos friltros quantity//--------------------------------------------------------!
+///Villalobos filtros quantity//--------------------------------------------------------!
 
 function villa_quantity_asc($connect)
 {
