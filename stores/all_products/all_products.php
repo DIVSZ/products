@@ -1,9 +1,25 @@
 <?php
 
 require_once ("../../lib/functions.php");
-$products = get_all_products($connect);
 $users= get_all_productsin($connect);
+//stores filtros//
+$antwone  =get_antwone_products($connect);
+$villalobos=get_villalobos_products($connect);
+$juan    =get_juan_products($connect);
 
+//names filtros//
+$a_z   =ordenar_az ($connect);
+$z_a   =ordenar_za ($connect);
+
+//precio filtros//
+$pr_asc  =price_asc($connect);
+$pr_desc =price_desc($connect);
+
+//quantity filtros//
+$quan_asd=quantity_asc($connect);
+$quan_desc=quantity_desc($connect);
+
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,42 +36,120 @@ $users= get_all_productsin($connect);
     <br> <a href = "../all_products/formulario_insert.php">Insert Product </a></small></h1>
 <table align="center">
         <thead>
-
-            
-    
             <tr>
                 <th>ID</th>
-                <th>name</th>
-                <th>Category 
+                <th>name
                     <small>
-                    <form method="post">
-                        <select name="select">
-                            <option selected ></option>
-                            <option value1="enlatados">enlatados</option>
-                            <option value2="bebibles">bebibles</option>
-                            <option value3="limpieza">limpieza</option>
+                     <form method="post" >
+                        <select name="orden" id="orden">
+                           <option value="0">Default</option>
+                           <option value="1">A-Z </option>
+                           <option value="2">Z-A</option>
                         </select>
-                        </form>
+                        <input type="submit" value="orden">
+                        <?php
+                           $orden = $_POST ["orden"];
+                        ?>
+                        <?php 
+                            if ($orden == 0): 
+                            $type_orden = $users; 
+                            elseif ($orden == 1):            
+                            $type_orden = $a_z; 
+                            elseif ($orden == 2): 
+                            $type_orden = $z_a; 
+                            endif; 
+                        ?>
+                     </form>   
                     </small>
                 </th>
+                <th>Category </th>
                 <th>Description</th>
                 <th>Price 
                     <small>
-                        <select name="select">
-                           <option selected ></option>
-                           <option value1="mayor">Mayor a menor </option>
-                           <option value2="menor">Menor a mayor</option>
+                        <form action= "../all_products/all_products.php" method="post">
+                        <select name="price" id="price">
+                           <option value="3" selected >Default</option>
+                           <option value="4">Mayor a menor </option>
+                           <option value="5">Menor a mayor</option>
                         </select>
+                        <input type="submit" value="price">
+                        <?php
+                           $orden = $_POST ["price"];
+                         ?>
+                        <?php 
+                            if ($orden == 3): 
+                            $type_orden = $users; 
+                            elseif ($orden == 4):            
+                            $type_orden = $pr_desc; 
+                            elseif ($orden == 5): 
+                            $type_orden = $pr_asc;
+                            endif; 
+                        ?>
+                        </form>
                     </small>
                 </th>
-                <th>Quantity</th>
+                <th>Quantity
+                <small>
+                        <form action= "../all_products/all_products.php" method="post">
+                        <select name="quantity" id="quantity">
+                           <option value="6" selected >Default</option>
+                           <option value="7">Mayor a menor </option>
+                           <option value="8">Menor a mayor</option>
+                        </select>
+                        <input type="submit" value="quantity">
+                        <?php
+                           $orden = $_POST ["quantity"];
+                        ?>
+                        <?php
+                            if ($orden == 6): 
+                            $type_orden = $users; 
+                            elseif ($orden == 7):            
+                            $type_orden = $quan_desc; 
+                            elseif ($orden == 8): 
+                            $type_orden = $quan_asd;
+                            endif; 
+                        ?>
+                        </form>
+                    </small>
+                </th>
                 <th>Image</th>
+                <th>Stores
+                  <small>
+
+                  <form action= "../all_products/all_products.php" method="post">
+                        <select name="stores" id="stores">
+                            <option value= "9" selected >all</option>
+                            <option value="10">villalobos</option>
+                            <option value="11">antwone</option>
+                            <option value="12">juan</option>
+                        </select>
+                        <input type="submit" value="stores">
+                        <?php
+                           $orden = $_POST ["stores"];
+                           ?>
+                           <?php if ($orden == 9): 
+                            $type_orden = $users; 
+                            elseif ($orden == 10):            
+                            $type_orden = $villalobos; 
+                            elseif ($orden == 11): 
+                            $type_orden = $antwone; 
+                            elseif ($orden == 12): 
+                                $type_orden = $juan; 
+                            endif; 
+                        ?>
+                        </form>
+
+
+
+                    </small>     
+                </th>
+
             </tr>
         </thead>
     <tbody>
     <?php
    
-    while ($fila = mysqli_fetch_array($users))
+    while ($fila = mysqli_fetch_array($type_orden))
 {
 
 ?>
@@ -80,6 +174,5 @@ $users= get_all_productsin($connect);
 ?>
     </tbody>
     </table>
-
 </body>
 </html>
