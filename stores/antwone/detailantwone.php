@@ -1,6 +1,10 @@
 <?php
 
 require_once("../../lib/functions.php");
+
+//Validacion//
+$_SESSION= login_mem();
+
 $id = $_GET['id'];
 $resultado = get_products($connect,$id);
 $products = mysqli_fetch_array($resultado);

@@ -3,6 +3,8 @@
 require_once ("../../lib/functions.php");
 $products = get_antwone_products($connect);
 
+//Validacion//
+$_SESSION= login_mem();
 
 //names filtros//
 $a_z =ant_az($connect);

@@ -1,6 +1,8 @@
 <?php
 
 require_once ("../../lib/functions.php");
+//Validacion//
+$_SESSION= login_mem();
 
 $name= $_POST ["name"];
 

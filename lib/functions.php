@@ -1,5 +1,19 @@
 <?php
 require_once ("connect.php");
+
+//FUNCIÓN DE INICIO DE SESIÓN//
+function login_mem(){
+    session_start();
+    if(!isset($_SESSION['user'])){
+        echo '<center><h3>Por favor debe iniciar sesión para continuar<br>
+        <a href="../users/inicio/login.php">Inicia sesión</a></h3></center>';
+        session_destroy();
+        die();
+    }
+    }
+
+
+
 //get producto ,,, where id   ,------------------------------------------------------------------------!
 
 function get_products($connect,$id)

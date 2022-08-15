@@ -1,6 +1,11 @@
 <?php
 
 require_once ("../../lib/functions.php");
+
+
+//Validacion//
+$_SESSION= login_mem();
+
 $users= get_all_productsin($connect);
 //stores filtros//
 $antwone  =get_antwone_products($connect);
